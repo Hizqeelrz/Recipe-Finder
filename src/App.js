@@ -40,11 +40,13 @@ class App extends Component {
 
         { this.state.recipes.map((recipe) => {
           return (
-            <div>
-              <p key={recipe.recipe_id}>{recipe.title}</p>
+            // key has to be passed always to the most parent element
+            <div key={recipe.recipe_id}>
+              <img src={recipe.image_url} alt={recipe.title} />
+              <p>{recipe.title}</p>
             </div>
           );
-        } )}
+        }) }
       </div>
     );
   }

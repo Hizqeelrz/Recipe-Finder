@@ -2,7 +2,6 @@ import React from 'react';
 
 import {Link} from "react-router-dom";
 
-
 const API_KEY= "9e8702e11e7e8fdcc951cead9b0ae517";
 
 class Recipe extends React.Component {
@@ -30,9 +29,7 @@ class Recipe extends React.Component {
     }
 
     render(){
-
         const recipe = this.state.activeRecipe;
-
         return (
             <div className="container">
                 {

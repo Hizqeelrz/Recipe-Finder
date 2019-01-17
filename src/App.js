@@ -19,7 +19,7 @@ class App extends Component {
     // incase of api cors error load this link https://cors-anywhere.herokuapp.com
     const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=15`);
 
-    //whatever called from the api will be stored in the data variable
+    //whatever called from the api will be stored in the data variable in json format
     const data = await api_call.json();
 
     this.setState({
@@ -27,7 +27,6 @@ class App extends Component {
     });
 
     console.log(this.state.recipes)
-
   }
 
   componentDidMount = () => {

@@ -1,5 +1,8 @@
 import React from 'react';
 
+// This Link component directs us to the route we are pointing out
+import { Link } from "react-router-dom";
+
 // passing the argument with props to import the props from the parent
 const Recipes = (props) => (
     <div className="container">
@@ -10,7 +13,7 @@ const Recipes = (props) => (
             <div key={recipe.recipe_id} className="col-md-4" style={{marginBottom: "2rem"}}>
               <div className="recipes__box">
                 <img 
-                  className="recipe__box-img" 
+                  className="recipe__box-img"
                   src={recipe.image_url} 
                   alt={recipe.title} />
               <div className="recipe__text">
@@ -21,7 +24,10 @@ const Recipes = (props) => (
                   {recipe.publisher}
                   </span></p>
               </div>
-              <button className="recipe_buttons">View Recipe</button>
+              <button className="recipe_buttons">
+              {/* we can handle template literals inside the javascript expression */}
+              <Link to={{ pathname: `/recipe/${recipe.recipe_id}` }}>View Recipe</Link>
+              </button>
             </div>
           </div>
           );

@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Form from './components/Form';
+import Recipes from './components/Recipes';
 
-const API_KEY= "232e1ac907e17ec40263bda75606b8b4";
+const API_KEY= "9e8702e11e7e8fdcc951cead9b0ae517";
 
 class App extends Component {
 
   state = {
     recipes: []
   }
-
 
   // e referes to an event object in the javascript
   getRecipe = async (e) => {
@@ -34,19 +34,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Search</h1>
+          <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe}/>
 
-        { this.state.recipes.map((recipe) => {
-          return (
-            // key has to be passed always to the most parent element
-            <div key={recipe.recipe_id}>
-              <img src={recipe.image_url} alt={recipe.title} />
-              <p>{recipe.title}</p>
-            </div>
-          );
-        }) }
+        {/*props name is recipes*/}
+        <Recipes recipes={this.state.recipes}/>
       </div>
     );
   }

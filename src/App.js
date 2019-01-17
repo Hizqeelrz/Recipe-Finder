@@ -30,6 +30,18 @@ class App extends Component {
 
   }
 
+  componentDidMount = () => {
+    const json = localStorage.getItem("recipes")
+    const recipes = JSON.parse(json);
+    this.setState({ recipes: recipes }); // we can use both key and values name when they are same
+  }
+
+  componentDidUpdate = () => {
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes", recipes);
+  }
+
+
   render() {
     return (
       <div className="App">

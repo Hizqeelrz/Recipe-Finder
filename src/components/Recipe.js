@@ -1,10 +1,12 @@
 import React from 'react';
 
 import {Link} from "react-router-dom";
+import Pace from 'react-pace-progress';
+
 
 // const API_KEY = "9e8702e11e7e8fdcc951cead9b0ae517";
-const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4"
-// const API_KEY3 = "975a5618562e8754b8857f7b90d04cfa"
+// const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4"
+const API_KEY3 = "4aedcdeeba0fde07a94d9520dda5442c"
 
 class Recipe extends React.Component {
 
@@ -16,10 +18,12 @@ class Recipe extends React.Component {
     // loads as soon as this is loaded or mounted on the web browser,
     // it trigger as soon as component loads on Screen
     componentDidMount = async () => {
+        this.setState({isLoading: true});
+
         const title = this.props.location.state.recipe;
 
         // incase of api cors error load this link https://cors-anywhere.herokuapp.com
-        const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY2}&q=${title}`);
+        const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY3}&q=${title}`);
     
         //whatever called from the api will be stored in the data variable
         const res = await req.json();
@@ -27,6 +31,8 @@ class Recipe extends React.Component {
         this.setState({
             activeRecipe: res.recipes[0]
         });
+        this.setState({isLoading: false});
+
         console.log(this.state.activeRecipe);
     }
 
@@ -34,8 +40,9 @@ class Recipe extends React.Component {
         const recipe = this.state.activeRecipe;
         return (
             <div className="App">
+          {this.state.isLoading ? <Pace color="#27ae60"/> : null}
                 <header className="App-header">
-                    <h1 className="App-title">Recipe Search</h1>
+                    <h1 className="App-title">Recipe App</h1>
                 </header>
             <div className="container">
                 {

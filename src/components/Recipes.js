@@ -24,14 +24,11 @@ const Recipes = (props) => (
                   {recipe.publisher}
                   </span></p>
               </div>
-              <button className="recipe_buttons">
-
               {/* state property(in location Object) is used to display actual recipe on Recipe Component */}
               {/* we can handle template literals inside the javascript expression */}
               <Link to={{ pathname: `/recipe/${recipe.recipe_id}`,
                     state: {recipe: recipe.title}
-             }}>View Recipe</Link>
-              </button>
+             }}>  <button className="btn danger">View Recipe</button></Link>
             </div>
           </div>
           );

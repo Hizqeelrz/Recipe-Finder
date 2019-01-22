@@ -4,7 +4,9 @@ import './App.css';
 import Form from './components/Form';
 import Recipes from './components/Recipes';
 
-const API_KEY= "9e8702e11e7e8fdcc951cead9b0ae517";
+// const API_KEY = "9e8702e11e7e8fdcc951cead9b0ae517";
+const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4"
+// const API_KEY3 = "975a5618562e8754b8857f7b90d04cfa"
 
 class App extends Component {
 
@@ -17,7 +19,7 @@ class App extends Component {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault(); //prevents the default behaviour
     // incase of api cors error load this link https://cors-anywhere.herokuapp.com
-    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=15`);
+    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY2}&q=${recipeName}&count=15`);
 
     //whatever called from the api will be stored in the data variable in json format
     const data = await api_call.json();

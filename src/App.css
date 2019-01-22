@@ -67,17 +67,21 @@ button:focus {
 }
 
 .recipes__title {
-  color: #e74c3c;
+  color: #191818;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 1.8rem 0 0.2rem 0;
+  letter-spacing: 0px;
+  padding-top: 15px;
 }
 
 .recipes__subtitle {
   text-transform: uppercase;
+  color: dimgrey;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 2px;
+  padding-top: 5px;
 }
 
 .recipes__subtitle span {
@@ -157,7 +161,7 @@ input:-webkit-autofill {
   margin-left: 10px;
 }
 
-.active-recipe__button {
+/* .active-recipe__button {
   border: solid 2px #e74c3c;
   background: transparent;
   padding: 0.2rem 0.9rem;
@@ -166,4 +170,63 @@ input:-webkit-autofill {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
+} */
+
+.button {
+  border-radius: 4px;
+  background-color: #f44336;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 21px;
+  padding: 8px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* margin: 5px; */
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 8px 28px;
+  margin-left: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
 }

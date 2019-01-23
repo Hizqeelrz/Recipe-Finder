@@ -10,7 +10,6 @@ import Pace from 'react-pace-progress';
 // const API_KEY4 = "a63f329c378b523b7c6c2d3db6d1face";
 const API_KEY5 = "ad37add75e446b6f4c6b1eff0cb2e0a2";
 
-
 class Recipe extends React.Component {
 
     state = {

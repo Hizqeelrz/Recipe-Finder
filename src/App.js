@@ -50,7 +50,6 @@ class App extends Component {
     localStorage.setItem("recipes", recipes);
   }
 
-
   render() {
     return (
       <div className="App">

@@ -6,7 +6,10 @@ import Pace from 'react-pace-progress';
 
 // const API_KEY = "9e8702e11e7e8fdcc951cead9b0ae517";
 // const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4"
-const API_KEY3 = "4aedcdeeba0fde07a94d9520dda5442c"
+// const API_KEY3 = "4aedcdeeba0fde07a94d9520dda5442c"
+// const API_KEY4 = "a63f329c378b523b7c6c2d3db6d1face";
+const API_KEY5 = "ad37add75e446b6f4c6b1eff0cb2e0a2";
+
 
 class Recipe extends React.Component {
 
@@ -23,7 +26,7 @@ class Recipe extends React.Component {
         const title = this.props.location.state.recipe;
 
         // incase of api cors error load this link https://cors-anywhere.herokuapp.com
-        const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY3}&q=${title}`);
+        const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY5}&q=${title}`);
     
         //whatever called from the api will be stored in the data variable
         const res = await req.json();

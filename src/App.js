@@ -6,8 +6,10 @@ import Recipes from './components/Recipes';
 import Pace from 'react-pace-progress';
 
 // const API_KEY = "9e8702e11e7e8fdcc951cead9b0ae517";
-// const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4"
-const API_KEY3 = "4aedcdeeba0fde07a94d9520dda5442c"
+// const API_KEY2 = "232e1ac907e17ec40263bda75606b8b4";
+// const API_KEY3 = "4aedcdeeba0fde07a94d9520dda5442c";
+// const API_KEY4 = "a63f329c378b523b7c6c2d3db6d1face";
+const API_KEY5 = "ad37add75e446b6f4c6b1eff0cb2e0a2";
 
 class App extends Component {
 
@@ -21,7 +23,7 @@ class App extends Component {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault(); //prevents the default behaviour
     // incase of api cors error load this link https://cors-anywhere.herokuapp.com
-    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY3}&q=${recipeName}&count=15`);
+    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY5}&q=${recipeName}&count=15`);
 
     //whatever called from the api will be stored in the data variable in json format
     const data = await api_call.json();
@@ -36,9 +38,11 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    const json = localStorage.getItem("recipes")
+    const json = localStorage.getItem("recipes");
     const recipes = JSON.parse(json);
+    // console.log(recipes);
     this.setState({ recipes: recipes }); // we can use both key and values name when they are same
+    console.log(recipes);
   }
 
   componentDidUpdate = () => {
@@ -50,7 +54,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {this.state.isLoading ? <Pace color="#ad7008"/> : null}
+      {this.state.isLoading ? <Pace color="#f79c25"/> : null}
         <header className="App-header">
           <h1 className="App-title">Recipe App</h1>
         </header>
